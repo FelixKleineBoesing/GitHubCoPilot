@@ -1,10 +1,14 @@
-# read txt file "pima-indians-diabetes.txt" from data folder into variable data
+# read txt file "pima-indians-diabetes.txt" from data folder into variable data as dataframe
+import pandas as pd
 
+data = pd.read_csv("data/pima-indians-diabetes.txt", header=None)
 
 # print column names of the variable data
-
+print(data.columns)
 
 # create correlation heatmap for all numerical values of data
+import seaborn as sns
+
 
 
 # One hot encode all categorical variables of data
