@@ -1,17 +1,12 @@
-# This is the backend for a data labelling tool
+# this is the backend for an image labeling system
+from flask import Flask
+from flask import Request
 
-# First try
-# Create CRUD endpoints for image labelling
+app = Flask(__name__)
 
-# Second try
-# post endpoint that allows the upload of an image. Errors are catched.
-
-# delete endpoint that deletes a record from database. Errors are catched.
-
-# patch endpoints that modifies new information for the existing record. Errors are catched.
-
-# get endpoint, that returns information of the specified record. Errors are catched.
-
-# put endpoint that replaces the specified record. Errors are catched.
-
+# this endpoint allows the upload of an image which then will be saved
+# in the directory uploads and the meta information will be saved in the postgres table "images_meta_data
+@app.route('/upload', methods=['POST'])
+def upload():
+    request_data = Request.get_data()
 
