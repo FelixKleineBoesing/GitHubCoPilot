@@ -20,6 +20,7 @@ def upload():
     image_id = str(uuid.uuid4())
     image_data.save(os.path.join('upload', image_id))
 
+
 # this endpoint allows the removal of an image from the database
 @app.route('/delete', methods=['POST'])
 def delete():
