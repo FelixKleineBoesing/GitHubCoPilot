@@ -10,7 +10,6 @@ app = Flask(__name__)
 if not os.path.exists('upload'):
     os.makedirs('upload')
 
-
 # this endpoint allows the upload of an image which then will be saved
 # in the directory uploads
 @app.route('/upload', methods=['POST'])
@@ -19,7 +18,6 @@ def upload():
     image_data = request.files['image']
     image_id = str(uuid.uuid4())
     image_data.save(os.path.join('upload', image_id))
-
 
 # this endpoint allows the removal of an image from the database
 @app.route('/delete', methods=['POST'])
@@ -30,7 +28,6 @@ def delete():
     os.remove(os.path.join('upload', image_id))
     # return a success message
     return 'success'
-
 
 # this endpoint allows the change of an existing image
 @app.route('/update', methods=['POST'])
